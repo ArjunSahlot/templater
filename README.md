@@ -18,12 +18,13 @@ If you completed all the download instructions and can see in the help message, 
 
 ### Example
 If you want a template file for competitive programming, and you code in 2 languages (say C++ and Python). Then you can create a folder inside the ".templates" folder for competitive programming, and then inside of that you can have a c++ file and a python file.
-
+<pre>
 Folder structure:
 .templates
 └── competitive
     ├── cpp
     └── py
+</pre>
 Then you can use this command to create a starter file in your current directory, `temp -p competitive cpp -n answer.cpp`
 
 Note: You don't have to put an extension in the template files. I find it easier to remove the extensions so that I can put the path as `competitive cpp` for a cpp competitive file instead of `competitive temp.cpp`.
