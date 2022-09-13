@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import argparse
+from pathlib import Path
+import shutil
+
+if not (Path.home() / '.templates').is_dir():
+    Path(Path.home() / '.templates').mkdir()
+    print("You don't have any templates yet. Create one by adding to the .templates folder in your home directory.")
+
+parser = argparse.ArgumentParser(description="Create template files for a new project")
+parser.add_argument("-p", "--path", nargs="+", help="Location of the template file")
+parser.add_argument("-n", "--name", help="Name of the new file")
+args = parser.parse_args()
+
+temppath = Path.home() / '.templates' / "/".join(args.path)
+newpath = args.name
+
+shutil.copyfile(temppath, newpath)
