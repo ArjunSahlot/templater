@@ -14,6 +14,10 @@ parser.add_argument("-n", "--name", help="Name of the new file")
 args = parser.parse_args()
 
 temppath = Path.home() / '.templates' / "/".join(args.path)
+if not temppath.is_file():
+    print(f"Invalid template path: {temppath}")
+    quit()
+
 newpath = args.name
 
 shutil.copyfile(temppath, newpath)
